@@ -12,7 +12,7 @@ Prior to running the integration, the data sets associated with your Starburst d
 ![integration-overview](https://github.com/starburstdata/starburst-collibra/blob/main/data_products/integration-before-after.png?raw=true)
 
 
-More information on this integration, including instructions for installing and running the integration, can be found on the [Collibra Marketplace listing](https://marketplace.collibra.com/listings/starburst-jdbc-driver/) page.
+More information on this integration, including instructions for installing and running the integration, can be found on the [Collibra Marketplace listing](https://marketplace.collibra.com/listings/starburst-jdbc-driver/) page or in the [starburst-collibra-dataproducts-user-guide.pdf](https://github.com/starburstdata/starburst-collibra/blob/main/data_products/starburst-collibra-dataproducts-user-guide.pdf) file in this folder.
 
 ---
 # QUICK INSTRUCTIONS
