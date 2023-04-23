@@ -6,13 +6,9 @@ This integration is designed to extract all data domains and all published data 
  * Link the data domain asset to the appropriate data product asset
  * Link the data product asset to the appropriate data sets
 
-Prior to running the integration, the data sets associated with your Starburst data products will look similar to what is shown below.  The data sets will be cataloged as views or tables and will linked to the Starburst datasource and system.
+Prior to running the integration, the data sets associated with your Starburst data products will look similar to what is shown below.  The data sets will be cataloged as views or tables and will linked to the Starburst datasource and system.  After running the integration, the data products and data domains will be added to the catalog (along with all of their metadata) and the data sets will be linked to the approriate data domains and data products.
 
-![integration-before](https://github.com/starburstdata/starburst-collibra/blob/main/data_products/collibra-dp-before.png?raw=true)
-
-After running the integration, the data products and data domains will be added to the catalog (along with all of their metadata) and the data sets will be linked to the approriate data domains and data products.
-
-![integration-after](https://github.com/starburstdata/starburst-collibra/blob/main/data_products/collibra-dp-after.png?raw=true)
+![integration-after](https://github.com/starburstdata/starburst-collibra/blob/main/data_products/dp-before-after.png?raw=true)
 
 
 More information on this integration, including instructions for installing and running the integration, can be found on the [Collibra Marketplace listing](https://marketplace.collibra.com/listings/starburst-jdbc-driver/) page.
