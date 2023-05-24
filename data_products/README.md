@@ -29,6 +29,7 @@ Full instructions for installing and running this integration can be found in th
 6. Run the Jupyter notebook by starting at the first cell and continuing through to the last cell.
 7. Confirm all of the expected asssets have been created in your Collibra instance by using the [starburst_collibra_integration.xlsx](https://github.com/starburstdata/starburst-collibra/blob/main/data_products/cma/starburst_collibra_integration.xlsx) as a guide.
 8. Add "Starburst Business Domain" and "Starburst Data Product" to the scope for the asset types that are searchable in the Data Marketplace in Collibra.
+
 ![marketplace_scopes](https://github.com/starburstdata/starburst-collibra/blob/main/images/marketplace_scopes.png?raw=true)
 
 ___
