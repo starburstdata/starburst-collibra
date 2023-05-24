@@ -9,7 +9,7 @@ This integration is designed to extract all [data domains](https://docs.starburs
 
 Prior to running the integration, the data sets associated with your Starburst data products will look similar to what is shown below.  The data sets will be cataloged as views or tables and will linked to the Starburst datasource and system.  After running the integration, the data products and data domains will be added to the catalog (along with all of their metadata) and the data sets will be linked to the approriate data domains and data products.
 
-![integration-overview](https://github.com/starburstdata/starburst-collibra/blob/main/images/integration-before-after.png?raw=true)
+<img src="https://github.com/starburstdata/starburst-collibra/blob/main/images/integration-before-after.png?raw=true" height="400" width="800">
 
 
 More information on this integration, including instructions for installing and running the integration, can be found on the [Collibra Marketplace listing](https://marketplace.collibra.com/listings/starburst-jdbc-driver/) page or in the [starburst-collibra-dataproducts-user-guide.pdf](https://github.com/starburstdata/starburst-collibra/blob/main/data_products/starburst-collibra-dataproducts-user-guide.pdf) file in this folder.
@@ -30,7 +30,7 @@ Full instructions for installing and running this integration can be found in th
 7. Confirm all of the expected asssets have been created in your Collibra instance by using the [starburst_collibra_integration.xlsx](https://github.com/starburstdata/starburst-collibra/blob/main/data_products/cma/starburst_collibra_integration.xlsx) as a guide.
 8. Add "Starburst Business Domain" and "Starburst Data Product" to the scope for the asset types that are searchable in the Data Marketplace in Collibra.
 
-![marketplace_scopes](https://github.com/starburstdata/starburst-collibra/blob/main/images/marketplace_scopes.png?raw=true)
+<img src="https://github.com/starburstdata/starburst-collibra/blob/main/images/marketplace_scopes.png?raw=true" height="600" width = "250">
 
 ___
 # DEMO
