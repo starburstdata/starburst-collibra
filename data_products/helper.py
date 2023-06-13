@@ -487,7 +487,7 @@ class StarburstCollibraFacade(object):
             domain_data_domains_import_command = ImportCommand()
             domain_data_domains_import_command.resource_type = 'Domain'
             domain_data_domains_import_command.identifier = {
-                        'name': 'Data Domains',
+                        'name': 'Business Domains',
                         'community': {
                             'name': community
                         }
@@ -504,14 +504,14 @@ class StarburstCollibraFacade(object):
                 domain_import_command.identifier = {
                         'name': get_data_domain['name'],
                         'domain': {
-                            'name': 'Data Domains',
+                            'name': 'Business Domains',
                             'community': {
                                 'name': community
                             }
                         }
                     }
                 domain_import_command.type = {
-                        'name': 'Data Domain'
+                        'name': 'Starburst Business Domain'
                     }
                 domain_import_command.attributes = {
                                     'Data Source': [{
@@ -599,7 +599,7 @@ class StarburstCollibraFacade(object):
                         }
                     }
                 product_import_command.type = {
-                        'name': 'Data Product'
+                        'name': 'Starburst Data Product'
                     }
                 
                 product_import_command.attributes = {
@@ -631,13 +631,13 @@ class StarburstCollibraFacade(object):
                 if get_data_product.__contains__('tags') and len(get_data_product['tags'])>0:
                     product_import_command.tags = get_data_product['tags']
 
-                # Data Product [Asset] is classified by Data Domain [Business Dimention]
+                # [Starburst Data Product] is classified by [Starburst Business Dimention]
                 product_import_command.relations = {
-                                '00000000-0000-0000-0000-000000007007:SOURCE': [
+                                '619c2d32-feb3-4913-92cd-144d8814fedf:SOURCE': [
                                     {
                                         'name': get_data_product['domainName'],
                                         'domain': {
-                                            'name': 'Data Domains',
+                                            'name': 'Business Domains',
                                             'community': {
                                                 'name': community
                                             }
@@ -694,7 +694,7 @@ class StarburstCollibraFacade(object):
 
                                         if 'description' in view_info:
                                             view_to_update['attributes']['Description from source system'] = [{
-                                                            'value': view_info['description'].replace("\n", "<br>" )
+                                                            'value': view_info['description']
                                                         }]
                                         related_product_views_identifiers.append(view_to_update['identifier'])
                                         product_views.append(view_to_update)
@@ -731,7 +731,7 @@ class StarburstCollibraFacade(object):
                                         
                                         if 'description' in view_info:
                                             view_to_update['attributes']['Description from source system'] = [{
-                                                            'value': view_info['description'].replace("\n", "<br>" )
+                                                            'value': view_info['description']
                                                         }]
                                             
                                         if 'incrementalColumn' in view_info:
