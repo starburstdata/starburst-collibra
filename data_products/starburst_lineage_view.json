@@ -67,9 +67,9 @@
         },
         {
             "layoutRegion": "context",
-            "id": "Data Product",
+            "id": "Starburst Data Product",
             "type": {
-                "id": "5feac910-2ba2-477d-a62d-7ff2af48c21d"
+                "id": "5ca67a1a-b443-41be-b652-a14d4e2b7d6c"
             },
             "fields": [
                 {
@@ -79,11 +79,11 @@
             ]
         },
         {
-            "id": "Data Domain",
+            "layoutRegion": "context",
+            "id": "Starburst Business Domain",
             "type": {
-                "id": "00000000-0000-0000-0000-000000031114"
-            },
-            "layoutRegion": "context"
+                "id": "d791c1d6-04f4-4afb-b346-81c0f47213ea"
+            }
         }
     ],
     "edges": [
@@ -98,16 +98,6 @@
             "roleDirection": false
         },
         {
-            "from": "Data Product",
-            "to": "Data Domain",
-            "label": "",
-            "style": "arrow",
-            "type": {
-                "id": "00000000-0000-0000-0000-000000007007"
-            },
-            "roleDirection": false
-        },
-        {
             "from": "Technology Asset",
             "to": "System",
             "label": "",
@@ -116,16 +106,6 @@
                 "id": "00000000-0000-0000-0000-000000007054"
             },
             "roleDirection": false
-        },
-        {
-            "from": "Table",
-            "to": "Data Product",
-            "label": "",
-            "style": "arrow",
-            "type": {
-                "id": "69cec74b-9db0-4d79-a224-37280dd616e2"
-            },
-            "roleDirection": true
         },
         {
             "from": "Schema",
@@ -176,6 +156,26 @@
                 "id": "00000000-0000-0000-0000-000000007006"
             },
             "roleDirection": true
+        },
+        {
+            "from": "Table",
+            "to": "Starburst Data Product",
+            "label": "",
+            "style": "arrow",
+            "type": {
+                "id": "69cec74b-9db0-4d79-a224-37280dd616e2"
+            },
+            "roleDirection": true
+        },
+        {
+            "from": "Starburst Data Product",
+            "to": "Starburst Business Domain",
+            "label": "",
+            "style": "arrow",
+            "type": {
+                "id": "619c2d32-feb3-4913-92cd-144d8814fedf"
+            },
+            "roleDirection": false
         }
     ],
     "showOverview": false,
