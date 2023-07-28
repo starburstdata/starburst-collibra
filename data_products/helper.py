@@ -475,10 +475,10 @@ class StarburstCollibraFacade(object):
     def query_and_import_data_domains(self, community = None):
 
         if not community:
-            print ('Unable to import data domains import due to missing parameter community.')
+            print ('ERROR:  Unable to import data domains due to missing "community" parameter.')
             return None
         
-        print ('Pulling all data domains from Starburst')
+        print ('INFO:  Pulling all data domains from Starburst')
         get_data_domains_response = StarburstService(sep_url = self.sep_url, sep_user = self.sep_user, sep_role = self.sep_role, sep_pwd = self.sep_pwd).get_data_domains()
         if get_data_domains_response:
             # Build Request
@@ -529,7 +529,7 @@ class StarburstCollibraFacade(object):
                 data_domains_import_request.append(domain_import_command.build())
             
             if data_domains_import_request:
-                print ('Importing all data domains to Collibra')
+                print ('INFO:  Importing all data domains to Collibra')
                 CollibraService(jobsApi = self.jobsApi, importApi = self.importApi, tmp_dir = self.tmp_dir).import_assets(import_request = data_domains_import_request)
             
         return get_data_domains_response
@@ -537,7 +537,7 @@ class StarburstCollibraFacade(object):
     ## Update All Data Product Views from Starburst to Collibra
     def update_data_product_views(self, product_views = None):
         if product_views:
-            print ('About to update Data Product Views')
+            print ('INFO:  About to update Data Product Views')
             data_product_views_import_request = []
             for product_view in product_views:
                 view_import_command = ImportCommand()
@@ -557,10 +557,10 @@ class StarburstCollibraFacade(object):
     def query_and_import_data_products(self, community = None, system_id = None):
 
         if not community and not system_id:
-            print ('Unable to import data products due to missing parameter community and/or system_id.')
+            print ('ERROR:  Unable to import data products due to missing "community" and/or "system ID" parameters.')
             return None
         
-        print ('Pulling all data products from Starburst')
+        print ('INFO:  Pulling all data products from Starburst')
         get_data_products_response = StarburstService(sep_url = self.sep_url, sep_user = self.sep_user, sep_role = self.sep_role, sep_pwd = self.sep_pwd).get_data_products()
         if get_data_products_response:
             data_products_import_request = []
@@ -660,7 +660,7 @@ class StarburstCollibraFacade(object):
                     catalog_domains = self.domainsApi.find_domains(community_id=domain_of_system_asset.community.id,name=catalog_domain_name,name_match_mode='EXACT')
                     
                     if not catalog_domains or not catalog_domains.results:
-                        print (f'Missing catalog schema {catalog_domain_name} in Collibra')
+                        print (f'WARN:  Missing catalog schema {catalog_domain_name} in Collibra')
 
                     if catalog_domains:
                         for catalog_domain_asset in catalog_domains.results:
@@ -673,7 +673,7 @@ class StarburstCollibraFacade(object):
                                 view_assets=self.assetsApi.find_assets(domain_id=catalog_domain_asset.id,name=f'{system_asset.name}>{get_data_product["catalogName"]}>{get_data_product["schemaName"]}>',name_match_mode='START',type_ids=[database_view_asset_type_id])
                             
                                 if not view_assets or not view_assets.results:
-                                    print (f'No Views to stitch from the system asset "{system_asset.name}".')
+                                    print (f'INFO:  No views found in the "{get_data_product["name"]}" data product.')
 
                                 for view_name, view_info in get_data_product['views'].items():
                                     found_view_asset = [view_asset for view_asset in view_assets.results if f'{system_asset.name}>{get_data_product["catalogName"]}>{get_data_product["schemaName"]}>{view_name}' == view_asset.name]
@@ -704,7 +704,7 @@ class StarburstCollibraFacade(object):
                                 view_assets=self.assetsApi.find_assets(domain_id=catalog_domain_asset.id,name=f'{system_asset.name}>{get_data_product["catalogName"]}>{get_data_product["schemaName"]}>',name_match_mode='START',type_ids=[table_asset_type_id])
                             
                                 if not view_assets or not view_assets.results:
-                                    print (f'No Materialized Views to stitch from the system asset "{system_asset.name}".')
+                                    print (f'INFO:  No materialized views found in the "{get_data_product["name"]}" data product.')
 
                                 for view_name, view_info in get_data_product['materializedViews'].items():
                                     found_view_asset = [view_asset for view_asset in view_assets.results if f'{system_asset.name}>{get_data_product["catalogName"]}>{get_data_product["schemaName"]}>{view_name}' == view_asset.name]
@@ -769,7 +769,7 @@ class StarburstCollibraFacade(object):
                 view_column_assets=self.assetsApi.find_assets(domain_id=product_view['domain_id'],name=f'{product_view["name"]}>',name_match_mode='START',type_ids=[column_asset_type_id])
             
                 if not view_column_assets or not view_column_assets.results:
-                    print ('No Columns associated to Views {system_asset} in Collibra.')
+                    print (f'WARN:  No columns found in Collibra for view/materialized view\n\t--> {product_view["name"]}')
                     continue
 
                 for view_column, view_column_description in product_view['columns'].items():
