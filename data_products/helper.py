@@ -673,7 +673,7 @@ class StarburstCollibraFacade(object):
                                 view_assets=self.assetsApi.find_assets(domain_id=catalog_domain_asset.id,name=f'{system_asset.name}>{get_data_product["catalogName"]}>{get_data_product["schemaName"]}>',name_match_mode='START',type_ids=[database_view_asset_type_id])
                             
                                 if not view_assets or not view_assets.results:
-                                    print ('No Views to stitch from the system asset {system_asset}.')
+                                    print (f'No Views to stitch from the system asset "{system_asset.name}".')
 
                                 for view_name, view_info in get_data_product['views'].items():
                                     found_view_asset = [view_asset for view_asset in view_assets.results if f'{system_asset.name}>{get_data_product["catalogName"]}>{get_data_product["schemaName"]}>{view_name}' == view_asset.name]
@@ -704,7 +704,7 @@ class StarburstCollibraFacade(object):
                                 view_assets=self.assetsApi.find_assets(domain_id=catalog_domain_asset.id,name=f'{system_asset.name}>{get_data_product["catalogName"]}>{get_data_product["schemaName"]}>',name_match_mode='START',type_ids=[table_asset_type_id])
                             
                                 if not view_assets or not view_assets.results:
-                                    print ('No Materialized Views to stitch from the system asset {system_asset}.')
+                                    print (f'No Materialized Views to stitch from the system asset "{system_asset.name}".')
 
                                 for view_name, view_info in get_data_product['materializedViews'].items():
                                     found_view_asset = [view_asset for view_asset in view_assets.results if f'{system_asset.name}>{get_data_product["catalogName"]}>{get_data_product["schemaName"]}>{view_name}' == view_asset.name]
