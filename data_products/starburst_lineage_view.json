@@ -1,22 +1,6 @@
 {
     "nodes": [
         {
-            "id": "Business Term",
-            "layoutRegion": "context",
-            "type": {
-                "id": "00000000-0000-0000-0000-000000011001"
-            },
-            "fields": [
-                {
-                    "key": "responsibility_00000000-0000-0000-0000-000000005016",
-                    "label": "Business Steward"
-                }
-            ],
-            "editorSettings": {
-                "filterPropsExpanded": false
-            }
-        },
-        {
             "layoutRegion": "context",
             "id": "Technology Asset",
             "type": {
@@ -57,13 +41,6 @@
                 "id": "00000000-0000-0000-0001-000400000002"
             },
             "fields": []
-        },
-        {
-            "layoutRegion": "context",
-            "id": "Business Process",
-            "type": {
-                "id": "00000000-0000-0000-0000-000000031103"
-            }
         },
         {
             "layoutRegion": "context",
@@ -126,36 +103,6 @@
                 "id": "00000000-0000-0000-0000-000000007043"
             },
             "roleDirection": false
-        },
-        {
-            "from": "Business Term",
-            "to": "Table",
-            "label": "",
-            "style": "arrow",
-            "type": {
-                "id": "6824bfbe-9727-4443-8cd9-d31f7e9681b4"
-            },
-            "roleDirection": true
-        },
-        {
-            "from": "Business Term",
-            "to": "Schema",
-            "label": "",
-            "style": "arrow",
-            "type": {
-                "id": "5d31ff74-e255-40cf-8098-5a9ffc14eed0"
-            },
-            "roleDirection": true
-        },
-        {
-            "from": "Business Process",
-            "to": "Business Term",
-            "label": "",
-            "style": "arrow",
-            "type": {
-                "id": "00000000-0000-0000-0000-000000007006"
-            },
-            "roleDirection": true
         },
         {
             "from": "Table",
