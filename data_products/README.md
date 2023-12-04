@@ -34,5 +34,4 @@ Full instructions for installing and running this integration can be found in th
 
 ___
 # DEMO
-The video below provides a brief walkthrough of running this integration.
-![integration-video](https://github.com/starburstdata/starburst-collibra/blob/main/data_products/dbt_Lightning_Demo.mp4?raw=true)
+A video that provides a brief walkthrough of running this integration will be posted here shortly.
