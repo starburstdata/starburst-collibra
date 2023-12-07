@@ -773,7 +773,8 @@ class StarburstCollibraFacade(object):
                     continue
 
                 for view_column, view_column_description in product_view['columns'].items():
-                    found_view_column_assets = [view_column_asset for view_column_asset in view_column_assets.results if view_column_asset.name.endswith(f'>{view_column.upper()}')]
+                    #found_view_column_assets = [view_column_asset for view_column_asset in view_column_assets.results if view_column_asset.name.endswith(f'>{view_column.upper()}')]
+                    found_view_column_assets = [view_column_asset for view_column_asset in view_column_assets.results if view_column_asset.name.endswith(f'>{view_column}(column)')]
                 
                     if found_view_column_assets:
                         view_column_import_command = ImportCommand()
