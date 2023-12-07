@@ -516,12 +516,12 @@ class StarburstCollibraFacade(object):
                 domain_import_command.attributes = {
                                     'Data Source': [{
                                         'value': 'Starburst'
-                                    }],
-                                    'Description': [{
+                                    }]
+                                }    
+                if get_data_domain.__contains__('description'):
+                    domain_import_command.attributes['Description'] = [{
                                         'value': get_data_domain['description']
                                     }]
-                                }
-                
                 if get_data_domain.__contains__('schemaLocation'):
                     domain_import_command.attributes['Location'] = [{
                                         'value': get_data_domain['schemaLocation']
