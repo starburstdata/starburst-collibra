@@ -1,0 +1,354 @@
+{
+    "nodes": [
+        {
+            "id": "Column",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031008"
+            },
+            "fields": [
+                {
+                    "key": "dataQualityRule_dd653878-52be-4831-9071-8d4e5067c4b6",
+                    "label": "CRM Cloud Data Quality (Column View)"
+                }
+            ]
+        },
+        {
+            "id": "Data Attribute",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031005"
+            }
+        },
+        {
+            "id": "Data Concept",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031113"
+            }
+        },
+        {
+            "id": "Data Category",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031109"
+            }
+        },
+        {
+            "id": "Table",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031007"
+            },
+            "layoutRegion": "context",
+            "fields": [
+                {
+                    "key": "dataQualityRule_8b36346b-9407-4850-b603-a290373cb1db",
+                    "label": "CRM Cloud Data Quality (TableView)"
+                }
+            ],
+            "display": "collapsed"
+        },
+        {
+            "layoutRegion": "context",
+            "id": "Schema",
+            "type": {
+                "id": "00000000-0000-0000-0001-000400000002"
+            }
+        },
+        {
+            "layoutRegion": "context",
+            "id": "Database",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031006"
+            },
+            "fields": [
+                {
+                    "key": "singleValueListAttribute_00000000-0000-0000-0001-000500000018",
+                    "label": "Data Source Type"
+                }
+            ],
+            "display": "expanded"
+        },
+        {
+            "layoutRegion": "context",
+            "id": "System",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031302"
+            },
+            "fields": [
+                {
+                    "key": "singleValueListAttribute_c0e00000-0000-0000-0001-000500000153",
+                    "label": "Security Level"
+                }
+            ]
+        },
+        {
+            "id": "Data Entity",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031004"
+            },
+            "layoutRegion": "context",
+            "display": "collapsed"
+        },
+        {
+            "layoutRegion": "context",
+            "id": "Data Model",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031003"
+            }
+        },
+        {
+            "id": "Data Domain",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031114"
+            },
+            "layoutRegion": "context",
+            "display": "collapsed"
+        },
+        {
+            "id": "Standard",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031206"
+            },
+            "layoutRegion": "context",
+            "display": "expanded"
+        },
+        {
+            "id": "Data Set",
+            "type": {
+                "id": "00000000-0000-0000-0001-000400000001"
+            },
+            "layoutRegion": "context",
+            "fields": [
+                {
+                    "key": "dataQualityRule_d3ac9808-7495-4a3d-a56d-10f3e6ab03b1",
+                    "label": "CRM Cloud Data Quality (Data Set View)"
+                },
+                {
+                    "key": "singleValueListAttribute_c0e00000-0000-0000-0001-000500000055",
+                    "label": "Sensitivity"
+                }
+            ]
+        },
+        {
+            "layoutRegion": "context",
+            "id": "Starburst Data Product",
+            "type": {
+                "id": "5ca67a1a-b443-41be-b652-a14d4e2b7d6c"
+            }
+        },
+        {
+            "layoutRegion": "context",
+            "id": "Starburst Business Domain",
+            "type": {
+                "id": "d791c1d6-04f4-4afb-b346-81c0f47213ea"
+            }
+        },
+        {
+            "layoutRegion": "context",
+            "id": "Data Usage",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031131"
+            }
+        }
+    ],
+    "edges": [
+        {
+            "from": "Column",
+            "to": "Column",
+            "label": "",
+            "style": "arrow",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007069"
+            },
+            "roleDirection": true
+        },
+        {
+            "from": "Data Attribute",
+            "to": "Column",
+            "label": "",
+            "style": "arrow",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007094"
+            },
+            "roleDirection": true
+        },
+        {
+            "from": "Data Concept",
+            "to": "Data Attribute",
+            "label": "",
+            "style": "arrow",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007007"
+            },
+            "roleDirection": true
+        },
+        {
+            "from": "Data Category",
+            "to": "Data Attribute",
+            "label": "",
+            "style": "arrow",
+            "type": {
+                "id": "06a32848-fba6-4fa5-89b1-6b9952ff507b"
+            },
+            "roleDirection": false
+        },
+        {
+            "from": "Column",
+            "to": "Table",
+            "label": "",
+            "style": "boxed",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007042"
+            },
+            "roleDirection": true
+        },
+        {
+            "from": "Table",
+            "to": "Schema",
+            "label": "",
+            "style": "boxed",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007043"
+            },
+            "roleDirection": false
+        },
+        {
+            "from": "Schema",
+            "to": "Database",
+            "label": "",
+            "style": "boxed",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007024"
+            },
+            "roleDirection": false
+        },
+        {
+            "from": "Database",
+            "to": "System",
+            "label": "",
+            "style": "boxed",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007054"
+            },
+            "roleDirection": false
+        },
+        {
+            "from": "Data Attribute",
+            "to": "Data Entity",
+            "label": "",
+            "style": "boxed",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007047"
+            },
+            "roleDirection": false
+        },
+        {
+            "from": "Data Entity",
+            "to": "Data Model",
+            "label": "",
+            "style": "boxed",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007046"
+            },
+            "roleDirection": true
+        },
+        {
+            "from": "Data Concept",
+            "to": "Data Domain",
+            "label": "",
+            "style": "boxed",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007021"
+            },
+            "roleDirection": false
+        },
+        {
+            "from": "Data Concept",
+            "to": "Data Concept",
+            "label": "",
+            "style": "boxing",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007021"
+            },
+            "roleDirection": true
+        },
+        {
+            "from": "Data Category",
+            "to": "Standard",
+            "label": "",
+            "style": "boxed",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007018"
+            },
+            "roleDirection": true
+        },
+        {
+            "from": "Column",
+            "to": "Data Set",
+            "label": "",
+            "style": "arrow",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007062"
+            },
+            "roleDirection": false
+        },
+        {
+            "from": "Table",
+            "to": "Starburst Data Product",
+            "label": "",
+            "style": "arrow",
+            "type": {
+                "id": "69cec74b-9db0-4d79-a224-37280dd616e2"
+            },
+            "roleDirection": true
+        },
+        {
+            "from": "Starburst Business Domain",
+            "to": "Starburst Data Product",
+            "label": "",
+            "style": "boxing",
+            "type": {
+                "id": "619c2d32-feb3-4913-92cd-144d8814fedf"
+            },
+            "roleDirection": true
+        },
+        {
+            "from": "Starburst Data Product",
+            "to": "Data Usage",
+            "label": "",
+            "style": "arrow",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007061"
+            },
+            "roleDirection": true
+        }
+    ],
+    "showOverview": false,
+    "enableFilters": true,
+    "showLabels": true,
+    "showFields": true,
+    "showLegend": true,
+    "showPreview": true,
+    "visitStrategy": "directed",
+    "layout": "HierarchyLeftRight",
+    "maxNodeLabelLength": 50,
+    "maxEdgeLabelLength": 30,
+    "layoutOptions": {
+        "compactGroups": false,
+        "componentArrangementPolicy": "topmost",
+        "edgeBends": true,
+        "edgeBundling": true,
+        "edgeToEdgeDistance": 5,
+        "minimumLayerDistance": "auto",
+        "nodeToEdgeDistance": 5,
+        "orthogonalRouting": true,
+        "preciseNodeHeightCalculation": true,
+        "recursiveGroupLayering": true,
+        "separateLayers": true,
+        "webWorkers": true,
+        "nodePlacer": {
+            "barycenterMode": true,
+            "breakLongSegments": true,
+            "groupCompactionStrategy": "none",
+            "nodeCompaction": false,
+            "straightenEdges": true
+        }
+    }
+}
