@@ -1,10 +1,33 @@
 {
     "nodes": [
         {
-            "layoutRegion": "context",
-            "id": "Technology Asset",
+            "id": "Column",
             "type": {
-                "id": "00000000-0000-0000-0000-000000031301"
+                "id": "00000000-0000-0000-0000-000000031008"
+            },
+            "fields": []
+        },
+        {
+            "id": "Table",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031007"
+            },
+            "layoutRegion": "context",
+            "fields": [],
+            "display": "collapsed"
+        },
+        {
+            "layoutRegion": "context",
+            "id": "Schema",
+            "type": {
+                "id": "00000000-0000-0000-0001-000400000002"
+            }
+        },
+        {
+            "layoutRegion": "context",
+            "id": "Database",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000031006"
             },
             "fields": [
                 {
@@ -12,9 +35,7 @@
                     "label": "Data Source Type"
                 }
             ],
-            "editorSettings": {
-                "edgePropsExpanded": true
-            }
+            "display": "expanded"
         },
         {
             "layoutRegion": "context",
@@ -22,38 +43,19 @@
             "type": {
                 "id": "00000000-0000-0000-0000-000000031302"
             },
-            "editorSettings": {
-                "edgePropsExpanded": true
-            }
-        },
-        {
-            "layoutRegion": "context",
-            "id": "Table",
-            "type": {
-                "id": "00000000-0000-0000-0000-000000031007"
-            },
-            "fields": []
-        },
-        {
-            "layoutRegion": "context",
-            "id": "Schema",
-            "type": {
-                "id": "00000000-0000-0000-0001-000400000002"
-            },
-            "fields": []
+            "fields": [
+                {
+                    "key": "singleValueListAttribute_c0e00000-0000-0000-0001-000500000153",
+                    "label": "Security Level"
+                }
+            ]
         },
         {
             "layoutRegion": "context",
             "id": "Starburst Data Product",
             "type": {
                 "id": "5ca67a1a-b443-41be-b652-a14d4e2b7d6c"
-            },
-            "fields": [
-                {
-                    "key": "tags",
-                    "label": "Tags"
-                }
-            ]
+            }
         },
         {
             "layoutRegion": "context",
@@ -65,32 +67,22 @@
     ],
     "edges": [
         {
-            "from": "Schema",
-            "to": "Technology Asset",
+            "from": "Column",
+            "to": "Column",
             "label": "",
-            "style": "boxed",
+            "style": "arrow",
             "type": {
-                "id": "00000000-0000-0000-0000-000000007024"
+                "id": "00000000-0000-0000-0000-000000007069"
             },
-            "roleDirection": false
+            "roleDirection": true
         },
         {
-            "from": "Technology Asset",
-            "to": "System",
-            "label": "",
-            "style": "boxed",
-            "type": {
-                "id": "00000000-0000-0000-0000-000000007054"
-            },
-            "roleDirection": false
-        },
-        {
-            "from": "Schema",
+            "from": "Column",
             "to": "Table",
             "label": "",
             "style": "boxed",
             "type": {
-                "id": "00000000-0000-0000-0000-000000007043"
+                "id": "00000000-0000-0000-0000-000000007042"
             },
             "roleDirection": true
         },
@@ -101,6 +93,26 @@
             "style": "boxed",
             "type": {
                 "id": "00000000-0000-0000-0000-000000007043"
+            },
+            "roleDirection": false
+        },
+        {
+            "from": "Schema",
+            "to": "Database",
+            "label": "",
+            "style": "boxed",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007024"
+            },
+            "roleDirection": false
+        },
+        {
+            "from": "Database",
+            "to": "System",
+            "label": "",
+            "style": "boxed",
+            "type": {
+                "id": "00000000-0000-0000-0000-000000007054"
             },
             "roleDirection": false
         },
@@ -131,7 +143,7 @@
     "showFields": true,
     "showLegend": true,
     "showPreview": true,
-    "visitStrategy": "completeGraph",
+    "visitStrategy": "directed",
     "layout": "HierarchyLeftRight",
     "maxNodeLabelLength": 50,
     "maxEdgeLabelLength": 30,
