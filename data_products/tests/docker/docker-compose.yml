@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres:12.7
+    container_name: postgres
+    user: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: starburst
+      POSTGRES_PASSWORD: starburstPassword
+      POSTGRES_DB: starburst
+      PGPASSWORD: starburstPassword
+    healthcheck:
+      test: ["CMD", "psql", "-h", "localhost", "-p", "5432", "-U", "starburst"]
+
+  minio:
+    hostname: minio
+    image: minio/minio:latest
+    container_name: minio
+    ports:
+      - 9000:9000
+    volumes:
+      - ./minio-data/:/data/ # place Your s3 buckets in ./minio-data/
+    environment:
+      MINIO_ACCESS_KEY: minio-access-key
+      MINIO_SECRET_KEY: minio-secret-key
+    command: server /data
+
+  starburst:
+    image: starburstdata/starburst-enterprise:${STARBURST_VERSION}
+    container_name: starburst
+    ports:
+      - 8080:8080
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_started
+    volumes:
+      - ./config.properties:/etc/starburst/config.properties
+      - ./catalog:/etc/starburst/catalog
+      - ./starburstdata.license:/etc/starburst/starburstdata.license
+    env_file:
+      - .env
+
+     
